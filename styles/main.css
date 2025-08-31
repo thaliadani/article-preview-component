@@ -32,16 +32,31 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 400px;
+    width: 80%;
     background-color: #fff;
     border-radius: 10px;
-    position: relative; /* Adicionado para criar contexto de posicionamento */
-    overflow: hidden; /* Impede que o conteúdo saia dos limites */
+    position: relative;
+    /* Adicionado para criar contexto de posicionamento */
+    overflow: hidden;
+    /* Impede que o conteúdo saia dos limites */
 }
 
-.image img {
+.image {
+    background-image: url('../images/drawers.jpg');
+    background-size: cover;
+    background-position: center;
     width: 100%;
-    border-radius: 10px 10px 0 0;
+    height: 500px;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+    padding: 40px;
 }
 
 .content {
@@ -49,8 +64,8 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
     gap: 1rem;
+    width: 100%;
 }
 
 .content .title {
@@ -70,9 +85,9 @@ main {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 40px 20px 40px;
     transition: all 0.3s ease;
 }
+
 .info {
     display: flex;
     justify-content: center;
@@ -120,7 +135,7 @@ main {
     left: 0;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(100%); 
+    transform: translateY(100%);
     transition: all 0.3s ease;
     z-index: 2;
     padding: 0 40px;
@@ -133,7 +148,6 @@ main {
     text-transform: uppercase;
     letter-spacing: 0.4rem;
 }
-
 
 .share .social-media {
     display: flex;
@@ -165,13 +179,13 @@ main {
 }
 
 .share-button.active img {
-    filter: invert(1) brightness(100); 
+    filter: invert(1) brightness(100);
 }
 
 .share.visible {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0); 
+    transform: translateY(0);
 }
 
 .author.hidden {
@@ -198,4 +212,16 @@ footer .attribution {
 footer .attribution a {
     color: var(--Grayish-Blue);
     cursor: pointer;
+}
+
+@media screen and (min-width: 1440px) {
+    main {
+        flex-direction: row;
+        width: 50%;
+    }
+
+    .image {
+        width: 80%;
+        height: 100%;
+    }
 }
