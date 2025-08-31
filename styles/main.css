@@ -70,7 +70,7 @@ main {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 20px 40px; /* Aumentado o padding para melhor espaçamento */
+    padding: 0 40px 20px 40px;
     transition: all 0.3s ease;
 }
 .info {
@@ -120,12 +120,11 @@ main {
     left: 0;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(100%); /* Começa totalmente fora da view */
+    transform: translateY(100%); 
     transition: all 0.3s ease;
     z-index: 2;
-    padding: 0 40px; /* Adicionado padding para corresponder ao author */
+    padding: 0 40px;
 }
-
 
 .share-text {
     color: var(--Light-Grayish-Blue);
@@ -166,18 +165,18 @@ main {
 }
 
 .share-button.active img {
-    filter: invert(1) brightness(100); /* Ícone branco */
+    filter: invert(1) brightness(100); 
 }
 
 .share.visible {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0); /* Volta à posição normal */
+    transform: translateY(0); 
 }
 
 .author.hidden {
     opacity: 0;
-    transform: translateY(-20px); /* Sobe levemente ao desaparecer */
+    transform: translateY(-20px);
     pointer-events: none;
 }
 
