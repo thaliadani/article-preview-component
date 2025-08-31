@@ -25,12 +25,12 @@ Users should be able to:
 
 ### Screenshot
 
-
+<img width="1920" height="957" alt="screencapture-article-preview-component-one-ashy-vercel-app-2025-08-30-23_39_00" src="https://github.com/user-attachments/assets/752adfeb-3e38-4be2-8478-6446c4f305f9" />
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/article-preview-component-AfGZ7-2zYv)
+- Live Site URL: [Vercel](https://article-preview-component-one-ashy.vercel.app/)
 
 ## My process
 
