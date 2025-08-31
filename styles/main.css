@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+
+:root {
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+
+    --font: 'Manrope', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--Light-Grayish-Blue);
+    font-family: var(--font);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative; /* Adicionado para criar contexto de posicionamento */
+    overflow: hidden; /* Impede que o conteúdo saia dos limites */
+}
+
+.image img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    gap: 1rem;
+}
+
+.content .title {
+    color: var(--Very-Dark-Grayish-Blue);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.content .description {
+    color: var(--Desaturated-Dark-Blue);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 40px; /* Aumentado o padding para melhor espaçamento */
+    transition: all 0.3s ease;
+}
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+
+}
+
+.info .avatar img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.name-date {
+    padding-left: 1rem;
+}
+
+.info .name-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info .name-date .name {
+    color: var(--Very-Dark-Grayish-Blue);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.author .info .date {
+    color: var(--Grayish-Blue);
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.share {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%); /* Começa totalmente fora da view */
+    transition: all 0.3s ease;
+    z-index: 2;
+    padding: 0 40px; /* Adicionado padding para corresponder ao author */
+}
+
+
+.share-text {
+    color: var(--Light-Grayish-Blue);
+    font-weight: 200;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+}
+
+
+.share .social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.share .social-media img {
+    cursor: pointer;
+}
+
+.share-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    background-color: var(--Light-Grayish-Blue);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.share-button img {
+    cursor: pointer;
+}
+
+.share-button.active {
+    background-color: var(--Desaturated-Dark-Blue);
+}
+
+.share-button.active img {
+    filter: invert(1) brightness(100); /* Ícone branco */
+}
+
+.share.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Volta à posição normal */
+}
+
+.author.hidden {
+    opacity: 0;
+    transform: translateY(-20px); /* Sobe levemente ao desaparecer */
+    pointer-events: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer .attribution {
+    font-size: 1rem;
+    text-align: center;
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
+footer .attribution a {
+    color: var(--Grayish-Blue);
+    cursor: pointer;
+}
