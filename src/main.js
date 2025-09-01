@@ -1,5 +1,9 @@
 let shareButtons = document.querySelectorAll(".share-button");
-let shareContainer = document.querySelector(".share");
+
+let shareContainerMobile = document.querySelector(".share-mobile");
+
+let shareContainerDesktop = document.querySelector(".share-desktop");
+
 let authorContainer = document.querySelector(".author");
 
 function toggleShare() {
@@ -8,10 +12,10 @@ function toggleShare() {
     
     if (isDesktop) {
         // No desktop, apenas toggle no share container
-        shareContainer.classList.toggle("visible");
+        shareContainerDesktop.classList.toggle("visible");
     } else {
         // No mobile, alterna ambos os containers
-        shareContainer.classList.toggle("visible");
+        shareContainerMobile.classList.toggle("visible");
         authorContainer.classList.toggle("hidden");
     }
     
@@ -29,27 +33,7 @@ shareButtons.forEach(button => {
     });
 });
 
-// Fecha o menu de share ao clicar em qualquer lugar da página
-document.addEventListener("click", function(event) {
-    if (shareContainer.classList.contains("visible")) {
-        const isDesktop = window.matchMedia("(min-width: 1440px)").matches;
-        let isShareButton = event.target.closest(".share-button");
-        let isShareContainer = event.target.closest(".share");
-        
-        if (!isShareButton && !isShareContainer) {
-            shareContainer.classList.remove("visible");
-            
-            if (!isDesktop) {
-                authorContainer.classList.remove("hidden");
-            }
-            
-            // Remove a classe active de todos os botões
-            shareButtons.forEach(button => {
-                button.classList.remove("active");
-            });
-        }
-    }
-});
+
 
 // Impede que o clique dentro do container de share feche o menu
 shareContainer.addEventListener("click", function(event) {

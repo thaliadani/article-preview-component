@@ -45,8 +45,9 @@ main {
     background-image: url('../images/drawers.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     width: 100%;
-    height: 500px;
+    height: 200px;
 }
 
 .article {
@@ -55,6 +56,7 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100%;
     gap: 20px;
     padding: 40px 40px 20px 40px;
 }
@@ -123,16 +125,16 @@ main {
     font-size: 0.8rem;
 }
 
-.share {
+.share-mobile , .share-desktop {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--Very-Dark-Grayish-Blue);
-    width: 80%;
+    width: 100%;
     height: 80px;
     position: absolute;
-    top:767px;
-    left: 50px;
+    bottom:0;
+    left: auto;
     opacity: 0;
     visibility: hidden;
     transform: translateY(20%);
@@ -150,14 +152,14 @@ main {
     letter-spacing: 0.4rem;
 }
 
-.share .social-media {
+.social-media {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
 }
 
-.share .social-media img {
+.social-media img {
     cursor: pointer;
 }
 
@@ -183,7 +185,7 @@ main {
     filter: invert(1) brightness(100);
 }
 
-.share.visible {
+.share-mobile.visible, .share-desktop.visible {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -221,14 +223,13 @@ footer .attribution a {
         height: 100%;
     }
 
-    .share {
+    .share-desktop {
         width: auto;
         height: auto;
         padding: 15px 35px;
         border-radius: 10px;
-        top: auto;
-        left: auto;
-        right: 397px;
+        bottom: 420px;
+        left: calc(100% - 672px);
         transform: translateY(100%) translateX(0%);
         opacity: 0;
         visibility: hidden;
@@ -239,7 +240,7 @@ footer .attribution a {
     }
 
     /* Triângulo do tooltip */
-    .share::after {
+    .share-desktop::after {
         content: '';
         position: absolute;
         bottom: -10px;
@@ -254,13 +255,8 @@ footer .attribution a {
         margin-right: 15px;
     }
 
-    .share .social-media {
+    .social-media {
         gap: 1.2rem;
         margin-right: 20px;
     }
-
-    .share .share-button {
-        display: none;
-    }
-
 }
